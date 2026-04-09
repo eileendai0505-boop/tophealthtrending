@@ -184,6 +184,14 @@
       margin-bottom: 12px;
     }
 
+    .img-text-block { display: flex; flex-direction: column; }
+    .img-text-block .detail-img { order: 0; }
+    .img-text-block p, .img-text-block ol, .img-text-block h2 { order: 0; }
+
+    @media(max-width: 640px) {
+      .img-text-block .detail-img { order: -1; }
+    }
+
     .detail-img { width: 100%; border-radius: 8px; margin: 16px 0; display: block; }
 
     .numbered-section h2 { font-size: 26px; font-weight: 800; margin: 24px 0 8px; color: #111; }
@@ -219,9 +227,65 @@
     @media(max-width: 640px) {
       .hero-title { font-size: 30px !important; }
       h2, .section-divider h2, .numbered-section h2 { font-size: 24px !important; }
-      .product-body { grid-template-columns: 1fr; }
-      .product-col-img { border-right: none; border-bottom: 1px solid #e0e8da; }
-      .product-col-score { border-left: none; border-top: 1px solid #e0e8da; flex-direction: row; gap: 16px; justify-content: flex-start; padding: 14px 16px; }
+
+      .product-card { overflow: hidden; }
+
+      .product-body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Col 1: name + image stacked, horizontal on mobile */
+      .product-col-img {
+        border-right: none;
+        border-bottom: 1px solid #e0e8da;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 20px 16px 16px;
+        gap: 16px;
+      }
+      .product-col-img .product-name {
+        font-size: 16px;
+        border-bottom: none;
+        border-right: 1px solid #ccc;
+        padding-bottom: 0;
+        padding-right: 12px;
+        width: auto;
+        flex-shrink: 0;
+        max-width: 120px;
+        text-align: left;
+      }
+      .product-col-img img {
+        max-width: 100px;
+        flex-shrink: 0;
+      }
+
+      /* Col 2: pros/cons */
+      .product-col-content {
+        padding: 16px;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+      .pros-list li, .cons-list li {
+        font-size: 14px;
+        word-break: break-word;
+        white-space: normal;
+      }
+
+      /* Col 3: score row */
+      .product-col-score {
+        border-left: none;
+        border-top: 1px solid #e0e8da;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 12px 16px;
+      }
+      .score-number { font-size: 38px; }
+      .score-stars { font-size: 15px; }
     }
   </style>
 </head>
@@ -426,22 +490,24 @@
         <h2>How the Mrjoint Knee Brace Became Our Top Pick of 2026</h2>
       </div>
 
-      <p class="intro-text">After hands-on testing of 15 of the most popular knee braces on the market, the Mrjoint Knee Brace emerged as the clear winner. Its performance during real-life tests was unmatched, making it the best choice for anyone looking to manage knee pain effectively. Here's a detailed breakdown of why it earned our #1 spot.</p>
-
-      <img src="/assets/top-5-knee-braces-mrjoint-review-1.webp" alt="Mrjoint Top Pick" class="detail-img">
+      <div class="img-text-block">
+        <p class="intro-text">After hands-on testing of 15 of the most popular knee braces on the market, the Mrjoint Knee Brace emerged as the clear winner. Its performance during real-life tests was unmatched, making it the best choice for anyone looking to manage knee pain effectively. Here's a detailed breakdown of why it earned our #1 spot.</p>
+        <img src="/assets/top-5-knee-braces-mrjoint-review-1.webp" alt="Mrjoint Top Pick" class="detail-img">
+      </div>
 
       <div class="numbered-section">
-        <h2>How It Performed in Our Tests</h2>
-        <p>We tested each brace across various scenarios—daily use at home, during work hours, and while exercising. The Mrjoint brace consistently outperformed its competitors:</p>
-        <ol>
-          <li><strong>Pain Relief Effectiveness:</strong> Provided immediate relief for arthritis, sports injuries, and general soreness.</li>
-          <li><strong>Support &amp; Stability:</strong> Silicone cushioning and targeted compression zones stabilized the knee and improved mobility.</li>
-          <li><strong>Comfort &amp; Breathability:</strong> Lightweight, ventilated fabric prevented overheating and irritation, even during extended wear.</li>
-          <li><strong>Adjustability:</strong> One-size-fits-all design with adjustable straps allowed for a custom, secure fit.</li>
-          <li><strong>Durability:</strong> Maintained elasticity and support after multiple washes and daily use.</li>
-        </ol>
-
-        <img src="/assets/top-5-knee-braces-mrjoint-review-2.webp" alt="Testing the Mrjoint Brace" class="detail-img">
+        <div class="img-text-block">
+          <h2>How It Performed in Our Tests</h2>
+          <p>We tested each brace across various scenarios—daily use at home, during work hours, and while exercising. The Mrjoint brace consistently outperformed its competitors:</p>
+          <ol>
+            <li><strong>Pain Relief Effectiveness:</strong> Provided immediate relief for arthritis, sports injuries, and general soreness.</li>
+            <li><strong>Support &amp; Stability:</strong> Silicone cushioning and targeted compression zones stabilized the knee and improved mobility.</li>
+            <li><strong>Comfort &amp; Breathability:</strong> Lightweight, ventilated fabric prevented overheating and irritation, even during extended wear.</li>
+            <li><strong>Adjustability:</strong> One-size-fits-all design with adjustable straps allowed for a custom, secure fit.</li>
+            <li><strong>Durability:</strong> Maintained elasticity and support after multiple washes and daily use.</li>
+          </ol>
+          <img src="/assets/top-5-knee-braces-mrjoint-review-2.webp" alt="Testing the Mrjoint Brace" class="detail-img">
+        </div>
 
         <h2>What Makes It Stand Out</h2>
         <p>The Mrjoint Knee Brace isn't just another support sleeve—it's a game-changer. Here's why it stood out during our tests:</p>
