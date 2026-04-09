@@ -190,6 +190,9 @@
 
     @media(max-width: 640px) {
       .img-text-block .detail-img { order: -1; }
+      .img-after-h2 h2 { order: -1; }
+      .img-after-h2 .detail-img { order: 0; }
+      .img-after-h2 p, .img-after-h2 ol { order: 1; }
     }
 
     .detail-img { width: 100%; border-radius: 8px; margin: 16px 0; display: block; }
@@ -236,7 +239,7 @@
         align-items: center;
       }
       .product-col-img .product-name {
-        font-size: 16px;
+        font-size: 19px;
         border-bottom: 1px solid #ccc;
         border-right: none;
         padding-bottom: 8px;
@@ -244,7 +247,7 @@
         text-align: center;
       }
       .product-col-img img {
-        max-width: 140px;
+        max-width: 170px;
       }
       .product-col-content {
         padding: 16px;
@@ -268,6 +271,7 @@
       }
       .score-number { font-size: 38px; }
       .score-stars { font-size: 15px; }
+      .btn-visit { padding: 15px 0; }
     }
   </style>
 </head>
@@ -478,7 +482,7 @@
       </div>
 
       <div class="numbered-section">
-        <div class="img-text-block">
+        <div class="img-text-block img-after-h2">
           <h2>How It Performed in Our Tests</h2>
           <p>We tested each brace across various scenarios—daily use at home, during work hours, and while exercising. The Mrjoint brace consistently outperformed its competitors:</p>
           <ol>
