@@ -246,21 +246,28 @@
       --accent: #c0392b;
     }
     .disclaimer {
-      font-size: 12px;
+      font-size: 16px;
       color: var(--muted);
       margin-top: 40px;
-      border-top: 1px solid #eee;
-      padding: 20px 0;
+      padding: 0 10%;
       text-align: left;
+    }
+    .disclaimer-inner {
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+      padding-bottom: 20px;
     }
     .disclaimer p { margin: 8px 0; line-height: 1.6; }
     .site-footer {
-      margin-top: 10px;
-      padding: 20px 0 40px;
-      border-top: 1px solid #f0f0f0;
+      margin-top: 0;
+      padding: 0 10% 40px;
       text-align: center;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 16px;
+    }
+    .site-footer-inner {
+      border-top: 1px solid #f0f0f0;
+      padding-top: 20px;
     }
     .footer-links { margin-bottom: 8px; }
     .footer-links a { color: var(--muted); text-decoration: none; }
@@ -336,14 +343,11 @@
 
         <img src="https://placehold.co/660x380?text=Image" alt="Article image" class="hero-img">
 
-        <div class="summary-box">
-          <p class="summary-title">SUMMARY</p>
-          <ul>
-            <li>Spent over $153,181.25 on knee treatments</li>
-            <li>Tried 11+ surgeries and procedures</li>
-            <li>Nothing worked… until this</li>
-          </ul>
-        </div>
+        <p>Sitting on the floor? Not happening.</p>
+
+        <p>Getting out of a chair? I'd struggle.</p>
+
+        <p>I tried everything to manage my condition, but…</p>
 
         <h2>Nothing worked.</h2>
 
@@ -363,7 +367,7 @@
 
         <p>I was skeptical. But I was also desperate.</p>
 
-        <h2>How Ordinary Knee Sleeves, Backed by Science</h2>
+        <h2>Not Ordinary Knee Braces, Backed by Science</h2>
 
         <p>She told me that the best knee sleeves work by applying consistent, graduated compression around the joint — improving blood flow, reducing inflammation, and stabilizing the patella.</p>
 
@@ -463,22 +467,6 @@
         </div>
 
       </div>
-      <section class="disclaimer">
-        <p><em>THIS IS AN ADVERTISEMENT AND NOT AN ACTUAL NEWS ARTICLE, BLOG OR CONSUMER PROTECTION UPDATE</em></p>
-        <p><em>DISCLAIMER: Results may vary from person to person. Mrjoint™ is not intended to diagnose, treat, cure or prevent any disease and does not provide medical advice.</em></p>
-        <p><em>ADVERTISING DISCLOSURE: This website is a marketplace. Therefore, you should be aware that the owner has a financial connection to the products and services advertised on the site. The owner receives payment for referring a qualified lead, but that is all.</em></p>
-        <p><em>ADVERTISING DISCLOSURE: This website and the products and services referred to on the website are advertising marketplaces; this is a commercial website and not a news publication. All photos of people used on this website are models. The owner of this website and the products and services referred to on the website only provides a service where consumers can obtain and compare offers.</em></p>
-      </section>
-
-      <footer class="site-footer">
-        <nav class="footer-links">
-          <a href="/terms-of-service.html">TERMS OF SERVICE</a> |
-          <a href="/privacy-policy.html">PRIVACY POLICY</a> |
-          <a href="/contact.html">CONTACT</a> |
-          <a href="/legal-notice.html">LEGAL NOTICE</a>
-        </nav>
-        <div class="copyright">© Copyright 2026. All rights reserved.</div>
-      </footer>
     </article>
 
     <!-- RIGHT: Sidebar -->
@@ -503,6 +491,27 @@
     </aside>
 
   </div>
+
+  <section class="disclaimer">
+    <div class="disclaimer-inner">
+      <p><em>THIS IS AN ADVERTISEMENT AND NOT AN ACTUAL NEWS ARTICLE, BLOG OR CONSUMER PROTECTION UPDATE</em></p>
+      <p><em>DISCLAIMER: Results may vary from person to person. Mrjoint™ is not intended to diagnose, treat, cure or prevent any disease and does not provide medical advice.</em></p>
+      <p><em>ADVERTISING DISCLOSURE: This website is a marketplace. Therefore, you should be aware that the owner has a financial connection to the products and services advertised on the site. The owner receives payment for referring a qualified lead, but that is all.</em></p>
+      <p><em>ADVERTISING DISCLOSURE: This website and the products and services referred to on the website are advertising marketplaces; this is a commercial website and not a news publication. All photos of people used on this website are models. The owner of this website and the products and services referred to on the website only provides a service where consumers can obtain and compare offers.</em></p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <nav class="footer-links">
+        <a href="/terms-of-service.html">TERMS OF SERVICE</a> |
+        <a href="/privacy-policy.html">PRIVACY POLICY</a> |
+        <a href="/contact.html">CONTACT</a> |
+        <a href="/legal-notice.html">LEGAL NOTICE</a>
+      </nav>
+      <div class="copyright">© Copyright 2026. All rights reserved.</div>
+    </div>
+  </footer>
 
 </body>
 </html>
