@@ -292,12 +292,27 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 680px) {
+      .page-header-inner {
+        padding: 0 15px;
+      }
+      .header-left {
+        font-size: 16px;
+      }
+      .header-center {
+        font-size: 14px;
+        gap: 6px;
+      }
+      .header-center img {
+        width: 24px;
+      }
+      .header-right {
+        display: none;
+      }
       .page-wrap {
         grid-template-columns: 1fr;
       }
       .sidebar-col {
         position: static;
-        order: -1;
       }
       .article-col h1 { font-size: 30px; }
       .article-col h2 { font-size: 26px; }
