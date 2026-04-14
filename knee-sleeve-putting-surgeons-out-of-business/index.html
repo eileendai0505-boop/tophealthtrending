@@ -335,7 +335,7 @@
     <div class="page-header-inner">
       <div class="header-left">Self-Care <span>Tips</span></div>
       <div class="header-center">
-        <img src="https://flagcdn.com/w40/us.png" alt="US Flag">
+        <img id="header-flag" src="https://flagcdn.com/w40/us.png" alt="US Flag">
         Health in Trend
       </div>
       <div class="header-right">Advertorial</div>
@@ -525,6 +525,19 @@
             var dateStr = tomorrow.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
             var el = document.getElementById('dynamic-promo-date');
             if(el) el.innerText = dateStr;
+
+            // Geo-targeting for flag icon
+            fetch('https://ipapi.co/json/')
+              .then(response => response.json())
+              .then(data => {
+                var countryCode = data.country_code ? data.country_code.toLowerCase() : 'us';
+                var flagImg = document.getElementById('header-flag');
+                if (flagImg) {
+                  flagImg.src = 'https://flagcdn.com/w40/' + countryCode + '.png';
+                  flagImg.alt = data.country_name + ' Flag';
+                }
+              })
+              .catch(err => console.log('Geo-targeting error:', err));
           })();
         </script>
         <p style="text-align: center; font-size: 17px; font-weight: 800; color: #222; margin-bottom: -4px;">Take advantage of our discount link by clicking below!</p>
