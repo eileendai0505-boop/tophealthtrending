@@ -313,9 +313,13 @@
     }
     .collapsible-card.active .toggle-arrow { transform: rotate(-135deg); }
 
+    /* Fix PC Grid: Use display: contents so children are direct grid items of .product-body */
+    .collapsible-content { display: contents; }
+
     @media(max-width: 640px) {
       .card-toggle-header { display: flex; }
       .collapsible-card .collapsible-content {
+        display: block; /* Turn back to block on mobile for folding */
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease-out;
