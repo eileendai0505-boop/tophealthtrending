@@ -273,6 +273,13 @@
       .score-stars { font-size: 15px; }
       .btn-visit { padding: 15px 0; }
     }
+
+    .pc-only { display: block; }
+    .mobile-only { display: none; }
+    @media(max-width: 640px) {
+      .pc-only { display: none !important; }
+      .mobile-only { display: block !important; }
+    }
   </style>
 </head>
 <body>
@@ -492,10 +499,24 @@
             <li><strong>Adjustability:</strong> One-size-fits-all design with adjustable straps allowed for a custom, secure fit.</li>
             <li><strong>Durability:</strong> Maintained elasticity and support after multiple washes and daily use.</li>
           </ol>
-          <img src="/assets/top-5-knee-braces-mrjoint-review-2.webp" alt="Testing the Mrjoint Brace" class="detail-img">
+          <div class="pc-only">
+            <video class="detail-img" autoplay muted loop playsinline loading="lazy" poster="/assets/top-5-knee-braces-mrjoint-review-2.webp">
+              <source src="/assets/what-makes-mrjoint-stand-out.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="mobile-only">
+            <img src="/assets/top-5-knee-braces-mrjoint-review-2.webp" alt="Testing the Mrjoint Brace" class="detail-img">
+          </div>
         </div>
 
         <h2>What Makes It Stand Out</h2>
+        <div class="mobile-only">
+          <video class="detail-img" autoplay muted loop playsinline loading="lazy">
+            <source src="/assets/what-makes-mrjoint-stand-out.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
         <p>The Mrjoint Knee Brace isn't just another support sleeve—it's a game-changer. Here's why it stood out during our tests:</p>
         <ol>
           <li><strong>Advanced Compression Technology:</strong> Enhances blood flow and reduces inflammation for faster recovery.</li>
