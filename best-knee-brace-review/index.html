@@ -280,6 +280,55 @@
       .pc-only { display: none !important; }
       .mobile-only { display: block !important; }
     }
+
+    /* Collapsible Cards Styles */
+    .collapsible-card { overflow: hidden; }
+    .card-toggle-header {
+      display: none;
+      background: #f0f5ee;
+      padding: 14px 16px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #e0e8da;
+    }
+    .rank-badge-inline {
+      background: #4a7a4a;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-right: 12px;
+    }
+    .name-inline { font-weight: 800; font-size: 18px; color: #111; flex-grow: 1; }
+    .toggle-arrow {
+      width: 10px;
+      height: 10px;
+      border-right: 2.5px solid #4a7a4a;
+      border-bottom: 2.5px solid #4a7a4a;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease;
+      margin-right: 6px;
+    }
+    .collapsible-card.active .toggle-arrow { transform: rotate(-135deg); }
+
+    @media(max-width: 640px) {
+      .card-toggle-header { display: flex; }
+      .collapsible-card .collapsible-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+      }
+      .collapsible-card.active .collapsible-content {
+        max-height: 2500px;
+      }
+      .collapsible-card.active .card-toggle-header {
+        border-bottom: 1px solid #e0e8da;
+      }
+      /* Ensure rank badge is hidden when toggle is shown */
+      .collapsible-card .rank-badge { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -410,11 +459,18 @@
       </div>
 
       <!-- ===== PRODUCT #4 ===== -->
-      <div class="product-card">
+      <div class="product-card collapsible-card" id="card-4">
+        <div class="card-toggle-header" onclick="toggleCard('card-4')">
+          <div style="display: flex; align-items: center;">
+            <span class="rank-badge-inline">#4</span>
+            <span class="name-inline">Vita Sleeves</span>
+          </div>
+          <span class="toggle-arrow"></span>
+        </div>
         <span class="rank-badge">#4</span>
-        <div class="product-body">
+        <div class="product-body collapsible-content">
           <div class="product-col-img">
-            <div class="product-name">Vita Sleeves</div>
+            <div class="product-name pc-only">Vita Sleeves</div>
             <img src="/assets/vita-sleeves-knee.jpg" alt="Vita Sleeves">
           </div>
           <div class="product-col-content">
@@ -446,11 +502,18 @@
       </div>
 
       <!-- ===== PRODUCT #5 ===== -->
-      <div class="product-card">
+      <div class="product-card collapsible-card" id="card-5">
+        <div class="card-toggle-header" onclick="toggleCard('card-5')">
+          <div style="display: flex; align-items: center;">
+            <span class="rank-badge-inline">#5</span>
+            <span class="name-inline">Bauerfeind</span>
+          </div>
+          <span class="toggle-arrow"></span>
+        </div>
         <span class="rank-badge">#5</span>
-        <div class="product-body">
+        <div class="product-body collapsible-content">
           <div class="product-col-img">
-            <div class="product-name">Bauerfeind</div>
+            <div class="product-name pc-only">Bauerfeind</div>
             <img src="/assets/Bauerfeind.jpg" alt="Bauerfeind">
           </div>
           <div class="product-col-content">
@@ -573,6 +636,13 @@
       <div class="copyright">© Copyright 2026. All rights reserved.</div>
     </footer>
   </main>
+  
+  <script>
+    function toggleCard(id) {
+      const card = document.getElementById(id);
+      card.classList.toggle('active');
+    }
+  </script>
 
 </body>
 </html>
