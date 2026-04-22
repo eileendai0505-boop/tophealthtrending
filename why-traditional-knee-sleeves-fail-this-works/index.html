@@ -658,10 +658,8 @@
         var winHeight = window.innerHeight;
         var maxScroll = docHeight - winHeight;
         
-        // Check if user has scrolled past 50%
-        if (!hasReachedHalfway && scrollY >= maxScroll * 0.5) {
-          hasReachedHalfway = true;
-        }
+        // Dynamically check if scroll is past 50%
+        hasReachedHalfway = (scrollY >= maxScroll * 0.5);
 
         if (hasReachedHalfway) {
           var finalCtaRect = finalCta.getBoundingClientRect();
@@ -671,6 +669,9 @@
           } else {
             floatingBtn.classList.add('show-floating');
           }
+        } else {
+          // Hide the button if we scroll back up above 50%
+          floatingBtn.classList.remove('show-floating');
         }
       });
     });
