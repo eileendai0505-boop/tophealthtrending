@@ -663,8 +663,8 @@
         var winHeight = window.innerHeight;
         var maxScroll = docHeight - winHeight;
         
-        // Dynamically check if scroll is past 2/3
-        hasReachedThreshold = (scrollY >= maxScroll * (2/3));
+        // Dynamically check if scroll is past 7/12
+        hasReachedThreshold = (scrollY >= maxScroll * (7/12));
 
         if (hasReachedThreshold) {
           var finalCtaRect = finalCta.getBoundingClientRect();
@@ -675,7 +675,7 @@
             floatingBtn.classList.add('show-floating');
           }
         } else {
-          // Hide the button if we scroll back up above 2/3
+          // Hide the button if we scroll back up above 7/12
           floatingBtn.classList.remove('show-floating');
         }
       });
