@@ -307,6 +307,8 @@
     .footer-links a { color: var(--muted); text-decoration: none; }
     .footer-links a:hover { color: var(--accent); }
 
+    #mobile-floating-cta-container { display: none; }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 680px) {
       .page-header-inner,
@@ -342,6 +344,24 @@
       .promo-banner { padding-left: 15px !important; padding-right: 15px !important; }
       .mobile-only-item { display: block !important; width: 100%; border-radius: 6px; margin-bottom: 24px; }
       .mobile-hidden { display: none !important; }
+
+      #mobile-floating-cta-container {
+        display: block;
+        position: fixed;
+        bottom: 10px;
+        left: 0;
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+        z-index: 999;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+      #mobile-floating-cta-container.show-floating {
+        opacity: 1;
+        pointer-events: auto;
+      }
     }
     .mobile-only-item { display: none; }
   </style>
@@ -565,7 +585,7 @@
           })();
         </script>
         <p style="text-align: center; font-size: 17px; font-weight: 800; color: #222; margin-bottom: -4px;">Take advantage of our discount link by clicking below!</p>
-        <a href="https://4607.bxuxnjzk.com/outgoing" target="_blank" rel="noopener noreferrer" class="cta-btn-green">GET 55% OFF Mrjoint Knee Brace Now</a>
+        <a href="https://4607.bxuxnjzk.com/outgoing" target="_blank" rel="noopener noreferrer" class="cta-btn-green" id="final-cta-btn">GET 55% OFF Mrjoint Knee Brace Now</a>
 
       </div>
     </article>
@@ -613,6 +633,48 @@
       <div class="copyright">© Copyright 2026. All rights reserved.</div>
     </div>
   </footer>
+
+  <div id="mobile-floating-cta-container">
+    <a href="https://4607.bxuxnjzk.com/outgoing" target="_blank" rel="noopener noreferrer" class="cta-btn-green" style="margin-top: 0;">Check Availability</a>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var floatingBtn = document.getElementById('mobile-floating-cta-container');
+      var finalCta = document.getElementById('final-cta-btn');
+      
+      // Only execute on mobile screens
+      if (!floatingBtn || !finalCta || window.innerWidth > 680) return;
+
+      var hasReachedHalfway = false;
+
+      window.addEventListener('scroll', function() {
+        var scrollY = window.scrollY || window.pageYOffset;
+        var docHeight = Math.max(
+          document.body.scrollHeight, document.documentElement.scrollHeight,
+          document.body.offsetHeight, document.documentElement.offsetHeight,
+          document.body.clientHeight, document.documentElement.clientHeight
+        );
+        var winHeight = window.innerHeight;
+        var maxScroll = docHeight - winHeight;
+        
+        // Check if user has scrolled past 50%
+        if (!hasReachedHalfway && scrollY >= maxScroll * 0.5) {
+          hasReachedHalfway = true;
+        }
+
+        if (hasReachedHalfway) {
+          var finalCtaRect = finalCta.getBoundingClientRect();
+          // Hide floating button when the final CTA is coming into view
+          if (finalCtaRect.top < winHeight) {
+            floatingBtn.classList.remove('show-floating');
+          } else {
+            floatingBtn.classList.add('show-floating');
+          }
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
