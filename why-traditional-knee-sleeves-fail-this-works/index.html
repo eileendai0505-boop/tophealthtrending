@@ -651,7 +651,7 @@
       // Only execute on mobile screens
       if (!floatingBtn || !finalCta || window.innerWidth > 680) return;
 
-      var hasReachedHalfway = false;
+      var hasReachedThreshold = false;
 
       window.addEventListener('scroll', function() {
         var scrollY = window.scrollY || window.pageYOffset;
@@ -663,10 +663,10 @@
         var winHeight = window.innerHeight;
         var maxScroll = docHeight - winHeight;
         
-        // Dynamically check if scroll is past 50%
-        hasReachedHalfway = (scrollY >= maxScroll * 0.5);
+        // Dynamically check if scroll is past 2/3
+        hasReachedThreshold = (scrollY >= maxScroll * (2/3));
 
-        if (hasReachedHalfway) {
+        if (hasReachedThreshold) {
           var finalCtaRect = finalCta.getBoundingClientRect();
           // Hide floating button when the final CTA is coming into view
           if (finalCtaRect.top < winHeight) {
@@ -675,7 +675,7 @@
             floatingBtn.classList.add('show-floating');
           }
         } else {
-          // Hide the button if we scroll back up above 50%
+          // Hide the button if we scroll back up above 2/3
           floatingBtn.classList.remove('show-floating');
         }
       });
