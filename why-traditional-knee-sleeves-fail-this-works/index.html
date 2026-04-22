@@ -307,8 +307,6 @@
     .footer-links a { color: var(--muted); text-decoration: none; }
     .footer-links a:hover { color: var(--accent); }
 
-    #mobile-floating-cta-container { display: none; }
-
     /* ===== RESPONSIVE ===== */
     @media (max-width: 680px) {
       .page-header-inner,
@@ -344,24 +342,6 @@
       .promo-banner { padding-left: 15px !important; padding-right: 15px !important; }
       .mobile-only-item { display: block !important; width: 100%; border-radius: 6px; margin-bottom: 24px; }
       .mobile-hidden { display: none !important; }
-
-      #mobile-floating-cta-container {
-        display: block;
-        position: fixed;
-        bottom: 10px;
-        left: 0;
-        width: 100%;
-        padding: 0 15px;
-        box-sizing: border-box;
-        z-index: 999;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.3s ease;
-      }
-      #mobile-floating-cta-container.show-floating {
-        opacity: 1;
-        pointer-events: auto;
-      }
     }
     .mobile-only-item { display: none; }
   </style>
@@ -527,7 +507,7 @@
 
         <p><strong>I have my life back.</strong></p>
 
-        <div class="cta-box mobile-hidden" style="text-align: left;">
+        <div class="cta-box" style="text-align: left;">
           <p class="cta-box-title">My Final Thoughts on Mrjoint Knee Sleeve…</p>
           <p>The quality, the support, the relief — this product delivers on every promise.</p>
           <p class="cta-offer">Special Offer: Get 55% Off Mrjoint Knee Sleeves!</p>
@@ -638,49 +618,6 @@
       <div class="copyright">© Copyright 2026. All rights reserved.</div>
     </div>
   </footer>
-
-  <div id="mobile-floating-cta-container">
-    <a href="https://4607.bxuxnjzk.com/outgoing"  class="cta-btn-green" style="margin-top: 0;">Check Availability</a>
-  </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var floatingBtn = document.getElementById('mobile-floating-cta-container');
-      var finalCta = document.getElementById('final-cta-btn');
-      
-      // Only execute on mobile screens
-      if (!floatingBtn || !finalCta || window.innerWidth > 680) return;
-
-      var hasReachedThreshold = false;
-
-      window.addEventListener('scroll', function() {
-        var scrollY = window.scrollY || window.pageYOffset;
-        var docHeight = Math.max(
-          document.body.scrollHeight, document.documentElement.scrollHeight,
-          document.body.offsetHeight, document.documentElement.offsetHeight,
-          document.body.clientHeight, document.documentElement.clientHeight
-        );
-        var winHeight = window.innerHeight;
-        var maxScroll = docHeight - winHeight;
-        
-        // Dynamically check if scroll is past 7/12
-        hasReachedThreshold = (scrollY >= maxScroll * (7/12));
-
-        if (hasReachedThreshold) {
-          var finalCtaRect = finalCta.getBoundingClientRect();
-          // Hide floating button when the final CTA is coming into view
-          if (finalCtaRect.top < winHeight) {
-            floatingBtn.classList.remove('show-floating');
-          } else {
-            floatingBtn.classList.add('show-floating');
-          }
-        } else {
-          // Hide the button if we scroll back up above 7/12
-          floatingBtn.classList.remove('show-floating');
-        }
-      });
-    });
-  </script>
 
 </body>
 </html>
