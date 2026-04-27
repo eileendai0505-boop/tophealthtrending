@@ -343,6 +343,8 @@
       .mobile-only-item { display: block !important; width: 100%; border-radius: 6px; margin-bottom: 24px; }
       .cta-btn-green { line-height: 1.3; }
       .img-max-600 { max-width: none !important; }
+      .root-cause-img { height: 300px !important; width: auto !important; max-width: 100% !important; margin: 0 auto !important; display: block; object-fit: contain !important; }
+      .promise-img { width: 245px !important; }
     }
     .img-max-600 { max-width: 600px; margin-left: auto; margin-right: auto; }
     .mobile-only-item { display: none; }
@@ -439,7 +441,7 @@
 
         <p>Check out the image below:</p>
 
-        <img src="/assets/real-root-cause-of-knee-pain.webp" alt="Root cause" class="hero-img" style="max-width: 300px; margin-left: auto; margin-right: auto; height: auto;">
+        <img src="/assets/real-root-cause-of-knee-pain.webp" alt="Root cause" class="hero-img root-cause-img" style="max-width: 300px; margin-left: auto; margin-right: auto;">
 
         <p>This part of your knee is called the patella (or kneecap).</p>
 
@@ -587,7 +589,10 @@
 
         <h2>Mrjoint Knee Stabilizer Has Already Helped More Than 70,000 People Relieve Pain</h2>
 
-        <img src="/assets/mrjoint-knee-brace-customer-reviews-no-logo.webp" alt="Customer reviews" class="hero-img">
+        <picture>
+          <source media="(max-width: 680px)" srcset="/assets/mrjoint-knee-brace-helped-70000-people.webp">
+          <img src="/assets/mrjoint-knee-brace-customer-reviews-no-logo.webp" alt="Customer reviews" class="hero-img">
+        </picture>
 
         <p>The response has been overwhelming. Thousands of people — from athletes to retirees — are finally finding relief after years of pain.</p>
 
@@ -600,7 +605,7 @@
         <p><em>"My orthopedic surgeon was shocked at my last appointment. He said whatever I'm doing, it's working."</em> — <strong>David K., 71</strong></p>
 
         <div style="background-color: #f0fdf4; border: 2px solid #3d7943; border-radius: 8px; padding: 24px; margin-top: 32px; margin-bottom: 32px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-          <p style="font-size: 22px; font-weight: 800; color: #111; margin-top: 0; margin-bottom: 16px;">Join Thousands Finding Real Relief with Mrjoint...</p>
+          <p style="font-size: 22px; font-weight: 800; color: #111; margin-top: 0; margin-bottom: 16px; line-height: 1.3;">Join Thousands Finding Real Relief with Mrjoint...</p>
           <p style="font-size: 18px; color: #222; margin-bottom: 16px; line-height: 1.5;">The quality, the support, the relief — this product delivers on every promise.</p>
           <p style="font-size: 18px; font-weight: 700; color: #b73926; margin-bottom: 24px;">Special Offer: Get 55% Off Mrjoint Knee Sleeves!</p>
           <a href="https://4607.bxuxnjzk.com/outgoing" class="cta-btn-green" style="font-style: italic;">GET 55% OFF Mrjoint Knee Brace Now</a>
@@ -608,7 +613,7 @@
 
         <h2>Here’s Our Promise to You: If It Doesn’t Work, You Don’t Pay!</h2>
 
-        <img src="/assets/60-money-back-logo.webp" alt="Money Back Guarantee" style="display: block; width: 350px; max-width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 24px;">
+        <img src="/assets/60-money-back-logo.webp" alt="Money Back Guarantee" class="promise-img" style="display: block; width: 350px; max-width: 100%; margin-left: auto; margin-right: auto; margin-bottom: 24px;">
 
         <p>Your order today is protected by our 60-Day “Relief or Refund” Guarantee.</p>
 
