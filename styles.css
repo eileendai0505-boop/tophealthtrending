@@ -13,6 +13,7 @@ body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica
 .media{display:flex;justify-content:center;margin-bottom:18px}
 .video-wrapper{position:relative;width:100%;padding-bottom:56.25%}
 .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border-radius:6px}
+.hero-image{width:100%;height:auto;display:block;border-radius:6px}
 
 .content{font-size:15px;line-height:1.7;color:#222}
 .content p{margin:12px 0}
