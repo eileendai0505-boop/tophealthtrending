@@ -20,7 +20,7 @@
   <link rel="icon" type="image/png" href="/assets/logo-fivacon.png">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Top 5 Best Knee Braces To Keep You Moving 2026 | Top Health Trending</title>
+  <title>Top 5 Best Knee Braces for Support and Pain Relief 2026 | Top Health Trending</title>
   <link rel="stylesheet" href="/styles.css">
   <style>
     .review-page { max-width: 860px; margin: 0 auto; padding: 0 0 40px; }
@@ -349,6 +349,27 @@
       /* Ensure rank badge is hidden when toggle is shown */
       .collapsible-card .rank-badge { display: none; }
     }
+
+    /* Intro "Show More" fold (mobile only) */
+    .intro-more-btn { display: none; }
+    @media(max-width: 640px) {
+      .intro-fold { position: relative; max-height: 180px; overflow: hidden; }
+      .intro-fold::after {
+        content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 110px;
+        background: linear-gradient(rgba(255,255,255,0), #fff);
+      }
+      .intro-fold.expanded { max-height: none; }
+      .intro-fold.expanded::after { display: none; }
+      .intro-more-btn {
+        display: block; margin: 0 auto 16px; padding: 4px 8px; background: none; border: 0;
+        color: #1a73c8; font-size: 20px; font-weight: 700; cursor: pointer;
+      }
+      .intro-more-btn::after {
+        content: ""; display: inline-block; width: 8px; height: 8px; margin: 0 0 4px 10px;
+        border-right: 3px solid currentColor; border-bottom: 3px solid currentColor; transform: rotate(45deg);
+      }
+      .intro-more-btn.expanded::after { transform: rotate(-135deg); margin-bottom: -2px; }
+    }
   </style>
 </head>
 <body>
@@ -362,18 +383,21 @@
   <main class="card">
     <div class="review-page">
 
-      <h1 class="hero-title" style="font-size:35px; font-weight:900; line-height:1.2; text-transform:none; margin-bottom:8px;">Top 5 Best Knee Braces To Keep You Moving 2026</h1>
+      <h1 class="hero-title" style="font-size:35px; font-weight:900; line-height:1.2; text-transform:none; margin-bottom:8px;">Top 5 Best Knee Braces for Support and Pain Relief 2026</h1>
       <p style="font-size:20px; color:#666; font-weight:400; margin-top:0; margin-bottom:6px;">According to Physical Therapists and Orthopedists</p>
       <p class="updated">Updated: April 07, 2026</p>
 
       <!-- Hero image -->
       <img src="/assets/top-5-knee-braces-2026-review.webp" alt="Top 5 Knee Braces" class="detail-img">
 
+      <div class="intro-fold" id="intro-fold">
       <p class="intro-text">If you're recovering from an injury or just looking for a bit of stability during activity, the best knee brace for your needs <strong>should keep you feeling comfortable, supported and safe</strong>. But finding the right brace can be tricky depending on the type of support your joint needs.</p>
 
       <p class="intro-text">Not to worry. We spoke to orthopedic surgeons and physical therapists about a range of knee brace designs and options so you can be on the mend quickly. While this list can certainly serve as a starting point for your quest for better joint support, you'll definitely want to consult your primary health care provider before making a decision on the right knee brace for you.</p>
 
       <p class="intro-text">Bonus: They'll also be able to offer some exercises to help with knee pain to maximize your recovery and ultimate comfort.</p>
+      </div>
+      <button type="button" class="intro-more-btn" onclick="toggleIntro(this)">Show More</button>
 
 
       <!-- ===== PRODUCT #1 ===== -->
@@ -401,7 +425,7 @@
               <li>Only Available at Official Site</li>
             </ul>
             <p class="promo-text">Limited Time Promo: 50% Off</p>
-            <a href="https://mrjointpatch.com/products/mrjoint-knee-brace"  class="btn-visit">Visit Site &gt;</a>
+            <a href="https://trymrjoint.com/products/mrjoint-knee-brace"  class="btn-visit">Visit Site &gt;</a>
           </div>
           <div class="product-col-score">
             <div class="score-number">9.8</div>
@@ -637,7 +661,7 @@
           <p>After rigorous testing, it's clear that the Mrjoint Knee Brace is in a league of its own. Its innovative compression technology, ergonomic design, and superior comfort make it the essential tool for anyone seeking real relief from knee pain—without relying on medication or bulky supports.</p>
         </div>
 
-        <a href="https://mrjointpatch.com/products/mrjoint-knee-brace"  class="final-cta">Click to Get Mrjoint Knee Brace for Best Prices Now!</a>
+        <a href="https://trymrjoint.com/products/mrjoint-knee-brace"  class="final-cta">Click to Get Mrjoint Knee Brace for Best Prices Now!</a>
       </div>
 
     </div><!-- end .review-page -->
@@ -665,6 +689,32 @@
       const card = document.getElementById(id);
       card.classList.toggle('active');
     }
+
+    function toggleIntro(btn) {
+      const expanded = document.getElementById('intro-fold').classList.toggle('expanded');
+      btn.classList.toggle('expanded', expanded);
+      btn.textContent = expanded ? 'Show Less' : 'Show More';
+    }
+  </script>
+
+  <script>
+    // Forward the ad click info (gclid, utm_*) to trymrjoint.com so its Google tag
+    // can credit the purchase to the original Google Ads keyword.
+    (function () {
+      var keep = ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+      var incoming = new URLSearchParams(window.location.search);
+      document.querySelectorAll('a[href*="trymrjoint.com"]').forEach(function (a) {
+        var url = new URL(a.href);
+        keep.forEach(function (k) {
+          if (incoming.has(k)) url.searchParams.set(k, incoming.get(k));
+        });
+        if (!url.searchParams.has('utm_source')) url.searchParams.set('utm_source', 'tophealthtrending');
+        if (!url.searchParams.has('utm_medium')) url.searchParams.set('utm_medium', 'advertorial');
+        if (!url.searchParams.has('utm_campaign')) url.searchParams.set('utm_campaign', 'top5-knee-brace');
+        url.searchParams.set('utm_content', 'variant-A');
+        a.href = url.toString();
+      });
+    })();
   </script>
 
 </body>
